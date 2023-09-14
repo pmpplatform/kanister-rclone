@@ -1,4 +1,4 @@
-TAG ?= 1.0.3
+TAG ?= 1.0.5
 
 docker: 
 	docker build --tag pmpplatform/kanister-rclone:$(TAG) .

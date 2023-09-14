@@ -1,10 +1,10 @@
 FROM lsiobase/alpine:3.14
 
-RUN apk add --no-cache bash gettext fuse rclone perl-utils 
+RUN apk add --no-cache bash gettext fuse rclone perl-utils libc6-compat 
 
 RUN rclone version
 
-RUN /bin/bash -c curl https://raw.githubusercontent.com/kanisterio/kanister/master/scripts/get.sh | bash -s
+RUN curl https://raw.githubusercontent.com/kanisterio/kanister/master/scripts/get.sh | bash -s
 
 RUN sed -i 's/#user_allow_other/user_allow_other/' /etc/fuse.conf
 
